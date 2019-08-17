@@ -10,4 +10,13 @@ public class BeanMeta {
     public Class beanClass; // bean class
     public Object config; // 配置类
     public Method method; // 配置类调用的生成方法
+
+    public BeanMeta copy() {
+        BeanMeta meta = new BeanMeta();
+        meta.name = name;
+        meta.beanClass = beanClass;
+        meta.config = config;
+        meta.method = method;
+        return meta;
+    }
 }
