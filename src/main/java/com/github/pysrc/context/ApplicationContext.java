@@ -91,6 +91,7 @@ public class ApplicationContext implements Context {
         if (meta.config == null) {
             // 通过Component生成
             bean = meta.beanClass.newInstance();
+            beans.put(meta.name, bean);
             for (Field field : meta.beanClass.getDeclaredFields()) {
                 field.setAccessible(true);
                 if (field.isAnnotationPresent(Autowired.class)) {
@@ -115,8 +116,8 @@ public class ApplicationContext implements Context {
                 params[i] = p;
             }
             bean = meta.method.invoke(meta.config, params);
+            beans.put(meta.name, bean);
         }
-        beans.put(meta.name, bean);
         return bean;
     }
 

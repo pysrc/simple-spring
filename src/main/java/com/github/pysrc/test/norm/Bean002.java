@@ -1,4 +1,4 @@
-package com.github.pysrc.test;
+package com.github.pysrc.test.norm;
 
 import com.github.pysrc.ann.Autowired;
 import com.github.pysrc.ann.Component;

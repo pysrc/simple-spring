@@ -1,4 +1,4 @@
-package com.github.pysrc.test;
+package com.github.pysrc.test.norm;
 
 
 public class Bean003 {
